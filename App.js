@@ -5,7 +5,6 @@ import { StatusBar } from "expo-status-bar";
 import { useDispatch, useSelector } from "react-redux";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
-
 import LoginScreen from "./screens/LoginScreen";
 import SignupScreen from "./screens/SignupScreen";
 import WelcomeScreen from "./screens/WelcomeScreen";
@@ -91,8 +90,8 @@ export default function App() {
       <Provider store={store}>
         <PersistGate loading={<LoadingOverlay />} persistor={persistor}>
           <StatusBar style="light" />
+          <Navigation />
         </PersistGate>
-        <Navigation />
       </Provider>
     </>
   );

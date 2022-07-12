@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import AuthContent from "../components/Auth/AuthContent";
 import LoadingOverlay from "../components/ui/LoadingOverlay";
 import { auth_actions, loading_actions } from "../redux/actions";
+import { API_KEY } from "@env";
 
 function LoginScreen() {
   const dispatch = useDispatch();
@@ -12,7 +13,7 @@ function LoginScreen() {
   const { loading } = useSelector((state) => state.loading);
   const { token } = useSelector((state) => state.auth);
 
-  console.log("token: ", token);
+  console.log("API: ", API_KEY);
 
   async function signInHandler({ email, password }) {
     await dispatch(postLoginUser(email, password, showLoading, dismissLoading));

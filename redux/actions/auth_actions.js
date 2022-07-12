@@ -1,6 +1,7 @@
 import { auth_types } from "../action-types";
 import Services from "../../services";
 import { Alert } from "react-native";
+import { API_KEY } from "@env";
 
 const { SET_AUTH_DATA } = auth_types;
 const { Get, Delete, Post, Put } = Services;
@@ -11,8 +12,6 @@ const setAuthData = (payload) => {
     payload: payload,
   };
 };
-
-const API_KEY = "AIzaSyBoeJgWKeHWSn2-4IrbV74TbeqeCYZlghs";
 
 const postCreateUser =
   (email, password, showLoading, dismissLoading) => (dispatch) => {
